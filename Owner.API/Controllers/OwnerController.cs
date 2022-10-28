@@ -9,13 +9,13 @@ namespace Owner.API.Controllers
     [Route("api/[controller]")]
     public class OwnerController : ControllerBase
     {
-
+          // GET: api/all values
         [HttpGet]
         public IActionResult GetAllOwners()
         {
             return Ok(OwnerData.OwnerList);
         }
-
+          // POST: api/add values
         [HttpPost]
         [Consumes("application/json")]
         public IActionResult AddOwner([FromBody] Owner owner)
@@ -31,7 +31,7 @@ namespace Owner.API.Controllers
                 return Ok(owner);
             }
         }
-
+          // PUT: api/updates values
         [HttpPut("{id:int}")]
         [Consumes("application/json")]
         public IActionResult UpdateOwner(int id, [FromBody] Owner updatedOwner)
@@ -49,7 +49,7 @@ namespace Owner.API.Controllers
 
             return Ok(updatedOwner);
         }
-
+           // DELETE: api/delete values
         [HttpDelete("{id}")]
         public IActionResult DeleteOwner(int id)
         {
